@@ -1,9 +1,9 @@
 package hass.unmarshaller
 
-import org.scalatest._
+import org.scalatest.funsuite.AnyFunSuite
 import play.api.libs.json.{JsValue, Json}
 
-class ResultParserTest extends FunSuite {
+class ResultParserTest extends AnyFunSuite {
   val result1: JsValue = Json.parse("{\"id\":18,\"type\":\"result\",\"success\":true,\"result\":3}")
   val wrongResult1: JsValue = Json.parse("{\"id\":18,\"type\":\"results\",\"success\":true,\"result\":3}")
   val wrongResult2: JsValue = Json.parse("{\"id\":18,\"type\":\"result\",\"success\":1234,\"result\":3}")

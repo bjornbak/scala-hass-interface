@@ -1,7 +1,7 @@
 package utils
-import org.scalatest._
+import org.scalatest.funsuite.AnyFunSuite
 
-class IdDispatcherTest extends FunSuite {
+class IdDispatcherTest extends AnyFunSuite {
   test("Id Dispatcher test 1") {
     val ids = IdDispatcher(1)
     assert(ids.peekNext == 1)
