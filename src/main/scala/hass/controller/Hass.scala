@@ -67,7 +67,6 @@ class Hass(io: IOPipe, token: String, val log: Logger) extends Observable[Event]
 
   private def ping(): Unit =
     pingExecutor.execute(() => {
-      println("ping1")
       Try(Thread.sleep(1000))
       Try(Await.result(send(id => "{\"id\":" + id + ",\"type\":\"ping\"}"), 10.seconds)) match {
         case Success(Result(true, _)) => ping()
